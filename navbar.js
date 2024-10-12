@@ -69,16 +69,21 @@ function SmoothScrollTo(element) {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar-collapse');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-item a');
+	const headerArea = document.querySelector('.header-area');
     
     if (window.scrollY > 50) { 
       navbar.style.backgroundColor = "#1a1c29"; 
       navLinks.forEach(link => {
         link.style.color = "#ffffff"; 
+	      link.style.fontSize = "12px";
       });
+	    headerArea.classList.add('scrolled');
     } else {
       navbar.style.backgroundColor = "#2b2d42"; 
       navLinks.forEach(link => {
         link.style.color = "#edf2f4"; 
+	      link.style.fontSize = "16px";
       });
+	    headerArea.classList.remove('scrolled');
     }
   });
